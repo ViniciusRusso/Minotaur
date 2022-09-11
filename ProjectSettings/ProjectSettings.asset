@@ -611,7 +611,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Android: UNITY_POST_PROCESSING_STACK_V2
+    Android: UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;MOBILE_INPUT
     EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2
     GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2
     Lumin: UNITY_POST_PROCESSING_STACK_V2
@@ -619,10 +619,11 @@ PlayerSettings:
     PS4: UNITY_POST_PROCESSING_STACK_V2
     PS5: UNITY_POST_PROCESSING_STACK_V2
     Stadia: UNITY_POST_PROCESSING_STACK_V2
-    Standalone: UNITY_POST_PROCESSING_STACK_V2
+    Standalone: UNITY_POST_PROCESSING_STACK_V2;CROSS_PLATFORM_INPUT;STARTER_ASSETS_PACKAGES_CHECKED
     WebGL: UNITY_POST_PROCESSING_STACK_V2
-    Windows Store Apps: UNITY_POST_PROCESSING_STACK_V2
+    Windows Store Apps: UNITY_POST_PROCESSING_STACK_V2;MOBILE_INPUT
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     tvOS: UNITY_POST_PROCESSING_STACK_V2
   additionalCompilerArguments: {}
   platformArchitecture: {}
@@ -711,7 +712,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
