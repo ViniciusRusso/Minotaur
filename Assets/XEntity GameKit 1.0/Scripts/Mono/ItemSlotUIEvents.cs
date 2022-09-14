@@ -7,10 +7,10 @@ namespace XEntity
     public class ItemSlotUIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         //The ItemSlot that is globally hovered over currently; null if none is hovered.
-        private static ItemSlot hoveredSlot;
+        private static SlotRenderer hoveredSlot;
 
         //The ItemSlot object that this script is attached to.
-        private ItemSlot mySlot;
+        private SlotRenderer mySlot;
 
         //The icon image of this slot UI.
         private UnityEngine.UI.Image slotUI;
@@ -32,7 +32,7 @@ namespace XEntity
         private void Awake() 
         {
             //All the variables are initialized here.
-            mySlot = GetComponent<ItemSlot>();
+            mySlot = GetComponent<SlotRenderer>();
             slotUI = GetComponent<UnityEngine.UI.Image>();
             originalSiblingIndex = transform.GetSiblingIndex();
 
@@ -57,7 +57,7 @@ namespace XEntity
         //This method is called when the mouse cursor starts dragging this slot UI.
         public void OnBeginDrag(PointerEventData eventData)
         {
-            slotUI.transform.SetAsLastSibling();
+            // slotUI.transform.SetAsLastSibling();
             slotUI.color = dragColor;
             slotUI.raycastTarget = false;
             hoveredSlot = null;
@@ -73,10 +73,10 @@ namespace XEntity
         //This method is called when the mouse cursor stops dragging this slot UI.
         public void OnEndDrag(PointerEventData eventData)
         {
-            //If there is a slot being hovered over, an attempt to transfer the items from this slot to the hovered slot will be made.
-            if (hoveredSlot != null) OnDrop();
+            // //If there is a slot being hovered over, an attempt to transfer the items from this slot to the hovered slot will be made.
+            // if (hoveredSlot != null) OnDrop();
 
-            transform.SetSiblingIndex(originalSiblingIndex);
+            // transform.SetSiblingIndex(originalSiblingIndex);
             transform.localPosition = origin;
             slotUI.color = regularColor;
             slotUI.raycastTarget = true;
@@ -85,7 +85,7 @@ namespace XEntity
         //Tries to transfer the items from this slot to the hoveredSlot. 
         private void OnDrop() 
         {
-            Utils.TransferItem(mySlot, hoveredSlot);
+            // Utils.TransferItem(mySlot, hoveredSlot);
         }
     } 
 }
